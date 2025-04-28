@@ -29,7 +29,9 @@ def on_received_number(rn):
         st_b = input.running_time()
         
 
+def on_forever():
+    radio.on_received_number(on_received_number)
+    input.on_button_pressed(Button.A, button_a)
+    input.on_button_pressed(Button.B, button_b)
 
-radio.on_received_number(on_received_number)
-input.on_button_pressed(Button.A, button_a)
-input.on_button_pressed(Button.B, button_b)
+basic.forever(on_forever)
