@@ -1,3 +1,4 @@
+
 radio.set_group(137)
 st_a = 0
 st_b = 0
@@ -42,6 +43,11 @@ def on_received_value(name, value):
     elif name == "b2":
         st_b = input.running_time() - value
 
-radio.on_received_value(on_received_value)
-input.on_button_pressed(Button.A, button_a)
-input.on_button_pressed(Button.B, button_b)
+def main():
+    radio.on_received_value(on_received_value)
+    input.on_button_pressed(Button.A, button_a)
+    input.on_button_pressed(Button.B, button_b)
+
+basic.forever(main)
+
+
