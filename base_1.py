@@ -1,5 +1,6 @@
 radio.set_group(137)
-st_a, st_b = 0 , 0
+st_a = 0
+st_b = 0
 done = 0
 
 def button_a():
