@@ -1,7 +1,10 @@
 
 
-a_time, b_time = 0,0
-st_a, st_b = 0, 0
+
+a_time = 0
+b_time = 0
+st_a = 0
+st_b = 0
 
 radio.set_group(137)
 
