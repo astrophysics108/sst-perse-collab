@@ -13,6 +13,8 @@ def button_a():
         a_time = et_a - st_a
         radio.send_value("a2", a_time)
         basic.show_icon(IconNames.YES)
+    else:
+        basic.show_icon(IconNames.NO)
         
 
 def button_b():
@@ -22,6 +24,8 @@ def button_b():
         b_time = et_b - st_b
         radio.send_value("b2", b_time)
         basic.show_icon(IconNames.YES)
+    else:
+        basic.show_icon(IconNames.NO)
 
 def on_received_value(name, value):
     global st_a, st_b
