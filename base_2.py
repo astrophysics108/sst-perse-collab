@@ -1,3 +1,7 @@
+
+
+
+
 a_time = 0
 b_time = 0
 st_a = 0
@@ -12,6 +16,8 @@ def button_a():
         a_time = et_a - st_a
         radio.send_value("a1", a_time)
         basic.show_icon(IconNames.HEART)
+    else:
+        basic.show_icon(IconNames.NO)
         
 
 def button_b():
@@ -21,8 +27,12 @@ def button_b():
         b_time = et_b - st_b
         radio.send_value("b1", b_time)
         basic.show_icon(IconNames.HEART)
+    else:
+        basic.show_icon(IconNames.NO)
 
 def on_received_number(rn):
+
+    basic.show_icon(IconNames.SQUARE)
     if rn == 0:
         st_a = input.running_time()
     elif rn == 1:
