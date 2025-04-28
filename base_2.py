@@ -1,7 +1,4 @@
 
-
-
-
 a_time = 0
 b_time = 0
 st_a = 0
@@ -15,7 +12,7 @@ def button_a():
         et_a = input.running_time()
         a_time = et_a - st_a
         radio.send_value("a1", a_time)
-        basic.show_icon(IconNames.HEART)
+        basic.show_icon(IconNames.YES)
     else:
         basic.show_icon(IconNames.NO)
         
@@ -26,20 +23,21 @@ def button_b():
         et_b = input.running_time()
         b_time = et_b - st_b
         radio.send_value("b1", b_time)
-        basic.show_icon(IconNames.HEART)
+        basic.show_icon(IconNames.YES)
     else:
         basic.show_icon(IconNames.NO)
 
 def on_received_number(rn):
-
-    basic.show_icon(IconNames.SQUARE)
+    global st_a, st_b
     if rn == 0:
         st_a = input.running_time()
+
     elif rn == 1:
         st_b = input.running_time()
         
 
 def on_forever():
+    global st_a, st_b
     radio.on_received_number(on_received_number)
     input.on_button_pressed(Button.A, button_a)
     input.on_button_pressed(Button.B, button_b)
