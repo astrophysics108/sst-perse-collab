@@ -9,6 +9,7 @@ def button_a():
         et_a = input.running_time()
         a_time = et_a - st_a
         radio.send_value("a1", a_time)
+        basic.show_icon(IconNames.HEART)
         
 
 def button_b():
@@ -17,6 +18,7 @@ def button_b():
         et_b = input.running_time()
         b_time = et_b - st_b
         radio.send_value("b1", b_time)
+        basic.show_icon(IconNames.HEART)
 
 def on_received_number(rn):
     if rn == 0:
