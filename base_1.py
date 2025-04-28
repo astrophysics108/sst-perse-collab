@@ -1,7 +1,4 @@
 
-
-
-
 radio.set_group(137)
 st_a = 0
 st_b = 0
@@ -42,6 +39,7 @@ def button_b():
                 basic.show_number(int(b_time))
 
 def on_received_value(name, value):
+    global st_a, st_b, done
     if name == "a2":
         st_a = input.running_time() - value
         
@@ -49,12 +47,12 @@ def on_received_value(name, value):
         st_b = input.running_time() - value
 
 def main():
+    global st_a, st_b, done
     radio.on_received_value(on_received_value)
     input.on_button_pressed(Button.A, button_a)
     input.on_button_pressed(Button.B, button_b)
 
 basic.forever(main)
-
 
 
 
